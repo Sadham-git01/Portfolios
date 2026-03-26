@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sadham Shahul Hameed | Cloud & Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Sadham Shahul Hameed - Aspiring Cloud & Software Engineer based in London." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #050816;
+      --bg-alt: #0b1020;
+      --accent: #4f46e5;
+      --accent-soft: rgba(79, 70, 229, 0.15);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #111827;
+      --border: #1f2937;
+      --danger: #ef4444;
+      --success: #22c55e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #111827 0, #020617 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* Layout */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.9rem 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .logo-circle {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #4f46e5, #0ea5e9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      box-shadow: 0 0 18px rgba(79, 70, 229, 0.7);
+    }
+
+    .nav-title {
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      font-size: 0.95rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.9rem;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--muted);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(to right, #4f46e5, #0ea5e9);
+      border-radius: 999px;
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 4.5rem 0 3.5rem;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 0.9rem;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #22c55e, #16a34a);
+      box-shadow: 0 0 10px rgba(34, 197, 94, 0.9);
+    }
+
+    .hero-title {
+      font-size: clamp(2.1rem, 3vw, 2.6rem);
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-title span {
+      background: linear-gradient(to right, #4f46e5, #0ea5e9);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      max-width: 32rem;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero-highlight {
+      font-size: 0.9rem;
+      color: #e5e7eb;
+      border-left: 3px solid var(--accent);
+      padding-left: 0.75rem;
+      margin-bottom: 1.6rem;
+      font-style: italic;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(to right, #4f46e5, #0ea5e9);
+      color: #e5e7eb;
+      box-shadow: 0 0 18px rgba(79, 70, 229, 0.7);
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: rgba(15, 23, 42, 0.9);
+      border-color: rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-meta-item span {
+      display: block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6b7280;
+      margin-bottom: 0.2rem;
+    }
+
+    .hero-right {
+      position: relative;
+      padding: 1.4rem;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 1.4rem;
+      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.25), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.4rem 1.3rem 1.3rem;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.9);
+      overflow: hidden;
+    }
+
+    .hero-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    .hero-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      border: 2px solid rgba(148, 163, 184, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 20%, #4f46e5, #0ea5e9);
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #e5e7eb;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-card-subtitle {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .hero-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .pill {
+      font-size: 0.7rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+    }
+
+    .hero-card-quote {
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-left: 2px solid rgba(148, 163, 184, 0.5);
+      padding-left: 0.7rem;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .hero-tag {
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.12);
+      color: #bbf7d0;
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      font-size: 0.7rem;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero-orbit-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #4f46e5, transparent);
+      opacity: 0.7;
+    }
+
+    .hero-orbit-dot:nth-child(1) {
+      top: 10%;
+      left: 12%;
+    }
+
+    .hero-orbit-dot:nth-child(2) {
+      top: 18%;
+      right: 10%;
+    }
+
+    .hero-orbit-dot:nth-child(3) {
+      bottom: 12%;
+      left: 18%;
+    }
+
+    .hero-orbit-dot:nth-child(4) {
+      bottom: 8%;
+      right: 16%;
+    }
+
+    /* Sections */
+    section {
+      padding: 3rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 1.8rem;
+    }
+
+    .section-kicker {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #6b7280;
+      margin-bottom: 0.2rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 32rem;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+    }
+
+    .about-text {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .about-text p + p {
+      margin-top: 0.7rem;
+    }
+
+    .about-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .about-card {
+      background: var(--card);
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.8rem 0.9rem;
+      font-size: 0.8rem;
+    }
+
+    .about-card-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .about-card-value {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.9rem;
+      font-size: 0.85rem;
+    }
+
+    .skill-card h3 {
+      font-size: 0.85rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .skill-tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+    }
+
+    /* Education & Experience */
+    .timeline {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.2fr);
+      gap: 1.8rem;
+    }
+
+    .timeline-column-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #6b7280;
+      margin-bottom: 0.6rem;
+    }
+
+    .timeline-item {
+      background: var(--card);
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.9rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .timeline-item-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-role {
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .timeline-org {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .timeline-date {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      white-space: nowrap;
+    }
+
+    .timeline-body {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.3rem;
+    }
+
+    .timeline-list {
+      margin-top: 0.35rem;
+      padding-left: 1rem;
+      list-style: disc;
+    }
+
+    .timeline-list li {
+      margin-bottom: 0.2rem;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.1rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.9rem;
+      font-size: 0.85rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .project-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .project-type {
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .project-desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.3rem;
+    }
+
+    .project-tech span {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+    }
+
+    .project-footer {
+      margin-top: 0.4rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      color: #9ca3af;
+    }
+
+    .project-link {
+      font-size: 0.75rem;
+      color: #93c5fd;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      cursor: pointer;
+    }
+
+    /* Achievements */
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .achievement-card {
+      background: var(--card);
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 0.8rem 0.9rem;
+      font-size: 0.8rem;
+    }
+
+    .achievement-title {
+      font-weight: 600;
+      margin-bottom: 0.2rem;
+    }
+
+    .achievement-tag {
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+      gap: 1.8rem;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border-radius: 0.9rem;
+      border: 1px solid var(--border);
+      padding: 1rem;
+      font-size: 0.85rem;
+    }
+
+    .contact-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .contact-label {
+      color: #9ca3af;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .contact-value {
+      text-align: right;
+    }
+
+    .contact-links {
+      margin-top: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .contact-links a {
+      color: #93c5fd;
+      text-decoration: underline;
+      text-decoration-style: dotted;
+    }
+
+    .contact-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.7rem;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+    }
+
+    .form-field label {
+      display: block;
+      font-size: 0.75rem;
+      margin-bottom: 0.15rem;
+      color: #9ca3af;
+    }
+
+    .form-field input,
+    .form-field textarea {
+      width: 100%;
+      padding: 0.45rem 0.55rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.8rem;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .form-field input:focus,
+    .form-field textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.4);
+    }
+
+    .form-field textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .form-footer {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 0.3rem;
+    }
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.15);
+      padding: 1.2rem 0 1.4rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+      text-align: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero,
+      .about-grid,
+      .timeline,
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 3.5rem;
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 2.3rem 0;
+      }
+
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="nav-left">
+        <div class="logo-circle">S</div>
+        <div class="nav-title">Sadham Shahul Hameed</div>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero container" id="top">
+      <div>
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Open to roles in Azure Cloud · IT Support · Software Development
+        </div>
+        <h1 class="hero-title">
+          Hi, I’m <span>Sadham</span><br />
+          Aspiring Cloud & Software Engineer
+        </h1>
+        <p class="hero-subtitle">
+          Motivated and detail-oriented IT graduate with a strong foundation in software development and a growing interest in cloud computing and Microsoft Azure. Currently based in London and pursuing an MSc in Computer Science and Technology.
+        </p>
+        <p class="hero-highlight">
+          “Motivated and detail-oriented IT graduate with a strong foundation in software development and a growing interest in cloud computing and Microsoft Azure.”
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Contact Me</a>
+          <a href="#projects" class="btn btn-outline">View Projects</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span>Location</span>
+            London, United Kingdom
+          </div>
+          <div class="hero-meta-item">
+            <span>Current Focus</span>
+            Azure · Web Development · Scalable Solutions
+          </div>
+          <div class="hero-meta-item">
+            <span>Availability</span>
+            Open to internships & entry-level roles
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div style="display:flex;align-items:center;gap:0.6rem;">
+              <div class="hero-avatar">S</div>
+              <div>
+                <div class="hero-card-title">Sadham Shahul Hameed</div>
+                <div class="hero-card-subtitle">Cloud & Software Enthusiast</div>
+              </div>
+            </div>
+            <div class="hero-tag">Actively Learning</div>
+          </div>
+          <div class="hero-pill-row">
+            <span class="pill">MSc Computer Science & Technology</span>
+            <span class="pill">BSc Information Technology</span>
+            <span class="pill">Microsoft Azure (Basics)</span>
+            <span class="pill">JavaScript · React · Node.js</span>
+          </div>
+          <div class="hero-card-quote">
+            Passionate about building scalable applications, learning modern cloud technologies, and solving real-world problems through clean, reliable software.
+          </div>
+          <div class="hero-card-footer">
+            <span>Ready for: Azure Cloud · IT Support · Software Development</span>
+            <span>London · UK</span>
+          </div>
+        </div>
+        <div class="hero-orbit">
+          <div class="hero-orbit-dot"></div>
+          <div class="hero-orbit-dot"></div>
+          <div class="hero-orbit-dot"></div>
+          <div class="hero-orbit-dot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">About</div>
+          <h2 class="section-title">Who I Am</h2>
+          <p class="section-subtitle">
+            A motivated IT graduate with a strong interest in cloud computing, software development, and user-focused digital experiences.
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I’m an aspiring Cloud & Software Engineer with a background in Information Technology and ongoing postgraduate studies in Computer Science and Technology. I enjoy working with modern web technologies, exploring cloud platforms like Microsoft Azure, and continuously improving my problem-solving skills.
+            </p>
+            <p>
+              My experience includes UI/UX work, front-end development, and building a personal portfolio website. I’m particularly interested in roles where I can grow in Azure Cloud, IT Support, or Software Development while contributing to real-world projects.
+            </p>
+          </div>
+          <div class="about-cards">
+            <div class="about-card">
+              <div class="about-card-title">Current Degree</div>
+              <div class="about-card-value">MSc Computer Science & Technology<br />Ulster University, London</div>
+            </div>
+            <div class="about-card">
+              <div class="about-card-title">Previous Degree</div>
+              <div class="about-card-value">BSc Information Technology<br />Jamal Mohamed College</div>
+            </div>
+            <div class="about-card">
+              <div class="about-card-title">Interests</div>
+              <div class="about-card-value">Cloud Computing · Azure · Web Development · Scalable Systems</div>
+            </div>
+            <div class="about-card">
+              <div class="about-card-title">Soft Skills</div>
+              <div class="about-card-value">Team Leadership · Collaboration · Communication · Problem-Solving</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Skills</div>
+          <h2 class="section-title">Technical Stack</h2>
+          <p class="section-subtitle">
+            A mix of cloud fundamentals, modern web technologies, and core development tools.
+          </p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Cloud & Tools</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Microsoft Azure (Basics)</span>
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">VS Code</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">React (Basic)</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Backend & Database</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">Basic SQL</span>
+            </div>
+          </div>
+          <div class="skill-card">
+            <h3>Other</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">UI/UX Fundamentals</span>
+              <span class="skill-tag">Team Leadership</span>
+              <span class="skill-tag">Collaboration</span>
+              <span class="skill-tag">Problem-Solving</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Experience -->
+    <section id="education">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Background</div>
+          <h2 class="section-title">Education & Experience</h2>
+          <p class="section-subtitle">
+            Academic foundation in IT and Computer Science, combined with hands-on UI/UX and development experience.
+          </p>
+        </div>
+        <div class="timeline">
+          <div>
+            <div class="timeline-column-title">Education</div>
+
+            <div class="timeline-item">
+              <div class="timeline-item-header">
+                <div>
+                  <div class="timeline-role">MSc Computer Science & Technology</div>
+                  <div class="timeline-org">Ulster University, London</div>
+                </div>
+                <div class="timeline-date">Sep 2025 – Present</div>
+              </div>
+              <div class="timeline-body">
+                Modules include:
+                <ul class="timeline-list">
+                  <li>Big Data & Infrastructure</li>
+                  <li>Knowledge Engineering</li>
+                  <li>Scalable Advanced Software Solutions</li>
+                  <li>Digital Transformation</li>
+                  <li>Data Science & Machine Learning</li>
+                  <li>Deep Learning and its Application</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-item-header">
+                <div>
+                  <div class="timeline-role">BSc Information Technology</div>
+                  <div class="timeline-org">Jamal Mohamed College</div>
+                </div>
+                <div class="timeline-date">Jun 2022 – Apr 2025</div>
+              </div>
+            </div>
+          </div>
+
+          <div id="experience">
+            <div class="timeline-column-title">Experience</div>
+
+            <div class="timeline-item">
+              <div class="timeline-item-header">
+                <div>
+                  <div class="timeline-role">UI / UX Intern</div>
+                  <div class="timeline-org">I Life Technologies</div>
+                </div>
+                <div class="timeline-date">Feb 2024 – Mar 2024</div>
+              </div>
+              <div class="timeline-body">
+                <ul class="timeline-list">
+                  <li>Assisted in designing user-friendly interfaces and improving overall user experience.</li>
+                  <li>Contributed to layout design and front-end improvements.</li>
+                  <li>Collaborated with developers to implement UI enhancements.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-item-header">
+                <div>
+                  <div class="timeline-role">Student & Volunteer</div>
+                  <div class="timeline-org">Jamal Mohamed College</div>
+                </div>
+                <div class="timeline-date">2022 – 2025</div>
+              </div>
+              <div class="timeline-body">
+                <ul class="timeline-list">
+                  <li>Led a team of 10 student volunteers for college events.</li>
+                  <li>Managed departmental competition team in inter-college events.</li>
+                  <li>Participated in community and awareness activities.</li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Projects</div>
+          <h2 class="section-title">What I’ve Built</h2>
+          <p class="section-subtitle">
+            A mix of front-end work and cloud-focused ideas that reflect my current skills and learning path.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Existing project -->
+          <div class="project-card">
+            <div class="project-title">Personal Portfolio Website</div>
+            <div class="project-type">Frontend · Responsive Web</div>
+            <p class="project-desc">
+              A fully responsive portfolio website built using HTML, CSS, and JavaScript. It showcases my projects, skills, and contact details with a clean and modern UI.
+            </p>
+            <div class="project-tech">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="project-footer">
+              <span>Focus: UI, responsiveness, clean design</span>
+              <span class="project-link">GitHub link (to be added)</span>
+            </div>
+          </div>
+
+          <!-- Suggested Azure project 1 -->
+          <div class="project-card">
+            <div class="project-title">Azure Static Portfolio Hosting</div>
+            <div class="project-type">Cloud · Azure Storage · CDN</div>
+            <p class="project-desc">
+              Hosting a static version of my portfolio on Azure Storage with static website hosting enabled, fronted by Azure CDN and secured with HTTPS.
+            </p>
+            <div class="project-tech">
+              <span>Microsoft Azure</span>
+              <span>Azure Storage</span>
+              <span>Azure CDN</span>
+              <span>Static Website</span>
+            </div>
+            <div class="project-footer">
+              <span>Focus: Cloud deployment basics</span>
+              <span class="project-link">GitHub link (planned)</span>
+            </div>
+          </div>
+
+          <!-- Suggested Azure project 2 -->
+          <div class="project-card">
+            <div class="project-title">Azure VM & Network Setup</div>
+            <div class="project-type">Cloud · Networking · Security</div>
+            <p class="project-desc">
+              A small lab project where I deploy a Linux virtual machine inside a virtual network, configure subnets and NSG rules, and enable basic monitoring.
+            </p>
+            <div class="project-tech">
+              <span>Microsoft Azure</span>
+              <span>Virtual Machines</span>
+              <span>Virtual Network</span>
+              <span>NSG</span>
+              <span>Azure Monitor</span>
+            </div>
+            <div class="project-footer">
+              <span>Focus: Core cloud infrastructure</span>
+              <span class="project-link">GitHub link (planned)</span>
+            </div>
+          </div>
+
+          <!-- Suggested Azure project 3 -->
+          <div class="project-card">
+            <div class="project-title">Serverless Function API</div>
+            <div class="project-type">Cloud · Serverless</div>
+            <p class="project-desc">
+              A simple Azure Function triggered by HTTP requests that logs input data to Azure Storage, demonstrating event-driven, serverless architecture.
+            </p>
+            <div class="project-tech">
+              <span>Azure Functions</span>
+              <span>HTTP Trigger</span>
+              <span>Azure Storage</span>
+              <span>JavaScript / Node.js</span>
+            </div>
+            <div class="project-footer">
+              <span>Focus: Serverless & integration</span>
+              <span class="project-link">GitHub link (planned)</span>
+            </div>
+          </div>
+
+          <!-- Suggested DevOps project -->
+          <div class="project-card">
+            <div class="project-title">CI/CD for Portfolio with GitHub Actions</div>
+            <div class="project-type">DevOps · Automation</div>
+            <p class="project-desc">
+              A CI/CD pipeline that automatically builds and deploys my portfolio website to Azure whenever I push changes to the main branch on GitHub.
+            </p>
+            <div class="project-tech">
+              <span>GitHub Actions</span>
+              <span>Azure App Service</span>
+              <span>Git</span>
+            </div>
+            <div class="project-footer">
+              <span>Focus: Automation & reliability</span>
+              <span class="project-link">GitHub link (planned)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Beyond Code</div>
+          <h2 class="section-title">Achievements & Activities</h2>
+          <p class="section-subtitle">
+            Experiences that reflect leadership, teamwork, and commitment beyond academics.
+          </p>
+        </div>
+
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <div class="achievement-title">Student Leadership</div>
+            <div class="achievement-tag">Team Lead · Events</div>
+            <p>
+              Led a team of 10 student volunteers for college events, coordinating activities and ensuring smooth execution.
+            </p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-title">Competition Management</div>
+            <div class="achievement-tag">Departmental Team</div>
+            <p>
+              Managed the departmental competition team in inter-college events, supporting planning and participation.
+            </p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-title">Sports</div>
+            <div class="achievement-tag">Teamwork · Discipline</div>
+            <p>
+              Secured Second Prize in Throwball (Junior Level) and Third Prize in a Cricket Tournament, demonstrating teamwork and dedication.
+            </p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-title">Community Participation</div>
+            <div class="achievement-tag">Awareness</div>
+            <p>
+              Participated in an Organ Donation Awareness Marathon, reflecting social responsibility and community engagement.
+            </p>
+          </div>
+
+          <div class="achievement-card">
+            <div class="achievement-title">Certification</div>
+            <div class="achievement-tag">Java Server Pages</div>
+            <p>
+              Completed a certification in Java Server Pages (JSP) with HTML/CSS, strengthening web development fundamentals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Let’s Connect</h2>
+          <p class="section-subtitle">
+            I’m open to internships, entry-level roles, and collaboration opportunities in Azure Cloud, IT Support, and Software Development.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-row">
+              <div class="contact-label">Email</div>
+              <div class="contact-value">sadhamm1245@gmail.com</div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">+44 7920 113 475</div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">Location</div>
+              <div class="contact-value">London, United Kingdom</div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">
+                <a href="#" target="_blank" rel="noreferrer">Add your LinkedIn URL here</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-label">GitHub</div>
+              <div class="contact-value">
+                <a href="#" target="_blank" rel="noreferrer">Add your GitHub URL here</a>
+              </div>
+            </div>
+            <p class="contact-note">
+              Feel free to reach out for opportunities, collaborations, or just to talk about cloud, web development, and learning paths.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <form class="contact-form" onsubmit="event.preventDefault(); alert('This is a static demo form. Connect it to a backend or service like Formspree to receive messages.');">
+              <div class="form-field">
+                <label for="name">Name</label>
+                <input id="name" type="text" placeholder="Your name" />
+              </div>
+              <div class="form-field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="you@example.com" />
+              </div>
+              <div class="form-field">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Write your message here..."></textarea>
+              </div>
+              <div class="form-footer">
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Sadham Shahul Hameed · Built with HTML, CSS & JavaScript · Cloud & Software Portfolio
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
