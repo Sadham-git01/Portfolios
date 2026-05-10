@@ -581,14 +581,14 @@
       color: var(--muted);
     }
 
-    .project-footer {
-      margin-top: 0.4rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.75rem;
-      color: #9ca3af;
-    }
+     .project-footer {
+       margin-top: 0.4rem;
+       display: flex;
+       flex-direction: column;
+       gap: 0.5rem;
+       font-size: 0.75rem;
+       color: #9ca3af;
+   }
 
     .project-link {
       font-size: 0.75rem;
@@ -597,6 +597,13 @@
       text-decoration-style: dotted;
       cursor: pointer;
     }
+
+     .project-buttons {
+       display: flex;
+       gap: 10px;
+       margin-top: 8px;
+       flex-wrap: wrap;
+   }
 
     /* Achievements */
     .achievements-grid {
