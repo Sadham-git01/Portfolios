@@ -714,7 +714,7 @@
       border-color: var(--accent);
       box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.4);
     }
-
+    
     .form-field textarea {
       min-height: 90px;
       resize: vertical;
